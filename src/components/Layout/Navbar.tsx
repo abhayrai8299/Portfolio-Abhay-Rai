@@ -1,4 +1,26 @@
+import { useState } from "react";
+
+interface NavbarItem {
+    name: string;
+    href: string;
+    extraStyle: string;
+}
+
 const Navbar = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    const navigationItems: NavbarItem[] = [
+        { name: "Home", href: "#home", extraStyle: "delay-100" },
+        { name: "Projects", href: "#projects", extraStyle: "delay-200" },
+        { name: "Experience", href: "#experience", extraStyle: "delay-300" },
+        { name: "Skills", href: "#skills", extraStyle: "delay-400" },
+        { name: "Contact", href: "#contact", extraStyle: "delay-500" },
+    ];
+
     return (
         <nav className="fixed w-full py-6 px-6 md:px-12 z-50 backdrop-blur-md bg-opacity-80 bg-gray-900/50 border-b border-gray-800/50">
             <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -9,36 +31,15 @@ const Navbar = () => {
                     VR
                 </a>
                 <div className="hidden md:flex md:items-center space-x-8">
-                    <a
-                        href="#home"
-                        className="nav-link text-gray-300 hover:text-white transition animate-fade delay-100"
-                    >
-                        Home
-                    </a>
-                    <a
-                        href="#projects"
-                        className="nav-link text-gray-300 hover:text-white transition animate-fade delay-200"
-                    >
-                        Projects
-                    </a>
-                    <a
-                        href="#experience"
-                        className="nav-link text-gray-300 hover:text-white transition animate-fade delay-300"
-                    >
-                        Experience
-                    </a>
-                    <a
-                        href="#skills"
-                        className="nav-link text-gray-300 hover:text-white transition animate-fade delay-400"
-                    >
-                        Skills
-                    </a>
-                    <a
-                        href="#contact"
-                        className="nav-link text-gray-300 hover:text-white transition animate-fade delay-500"
-                    >
-                        Contact
-                    </a>
+                    {navigationItems.map((item, index) => (
+                        <a
+                            key={index}
+                            href={item.href}
+                            className={`nav-link text-gray-300 hover:text-white transition animate-fade ${item.extraStyle}`}
+                        >
+                            {item.name}
+                        </a>
+                    ))}
                     <a
                         target="_blank"
                         rel="noopener noreferrer"
@@ -48,10 +49,36 @@ const Navbar = () => {
                         Resume
                     </a>
                 </div>
-                <button className="md:hidden text-gray-300 hover:text-white animate-fade delay-100">
+                <button
+                    className="md:hidden text-gray-300 hover:text-white animate-fade delay-100"
+                    onClick={toggleMenu}
+                >
                     <i className="fas fa-bars text-xl"></i>
                 </button>
             </div>
+            {isMenuOpen && (
+                <div className="md:hidden mt-4 bg-gray-900/90 border-t border-gray-800/50">
+                    {navigationItems.map((item, index) => (
+                        <a
+                            key={index}
+                            href={item.href}
+                            className={`block py-2 px-4 text-gray-300 hover:text-white transition`}
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            {item.name}
+                        </a>
+                    ))}
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://drive.google.com/drive/folders/1NxG_LrwUine5Ae9hhlFunhN5h-ZEdvyM"
+                        className="block py-2 px-4 text-gray-300 hover:text-white transition"
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        Resume
+                    </a>
+                </div>
+            )}
         </nav>
     );
 };

@@ -4,7 +4,7 @@ const HeroSection = () => {
     return (
         <section
             id="home"
-            className="min-h-screen flex items-center pt-20 pb-16 px-6 md:px-12 relative overflow-hidden"
+            className="md:min-h-screen flex items-center pt-20 pb-16 px-6 md:px-12 relative overflow-hidden"
         >
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6 relative z-10">
@@ -14,7 +14,7 @@ const HeroSection = () => {
                             Varun Raj
                         </span>
                     </h1>
-                    <h2 className="typewriter text-2xl md:text-3xl font-medium text-gray-300 animate-fade delay-100">
+                    <h2 className="text-xl font-medium text-gray-300 sm:animate-fade typewriter delay-100">
                         Frontend Engineer & Mobile Developer
                     </h2>
                     <p className="text-gray-400 max-w-lg animate-fade delay-200">
@@ -93,11 +93,13 @@ const ExperienceCircle = () => {
     return (
         <div className="relative hidden md:block">
             <div className="w-8/12 h-8/12 rounded-full absolute top-1/2 left-3/4 transform -translate-x-1/2 -translate-y-1/2 animate-pulse overflow-hidden">
-                <img
-                    src={ghibliPhoto}
-                    alt="Varun Raj Neyyila"
-                    className="w-full h-full object-cover"
-                />
+                <div className="w-full h-full overflow-hidden">
+                    <img
+                        src={ghibliPhoto}
+                        alt="Varun Raj Neyyila"
+                        className="w-full h-full object-cover"
+                    />
+                </div>
             </div>
             <div className="w-64 h-64 rounded-full border-2 border-cyan-400/30 flex items-center justify-center relative animate-float">
                 <div

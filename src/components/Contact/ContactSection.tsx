@@ -21,7 +21,7 @@ const ContactInfoCard = ({ info }: { info: ContactInfo }) => {
             <div
                 className={`w-10 h-10 rounded-full ${info.bgColor} flex items-center justify-center mr-4 mt-1 glow`}
             >
-                <i className={`fas fa-${info.icon} ${info.iconColor}`}></i>
+                <i className={`${info.icon} ${info.iconColor}`}></i>
             </div>
             <div>
                 <h4 className="font-medium text-gray-300 mb-1">{info.title}</h4>
@@ -102,7 +102,7 @@ const ContactForm = () => {
                 />
             </div>
             <div>
-                <label htmlFor="message" className="block text-gray-300 mb-2">
+                <label htmlFor="message" className="text-gray-300 mb-2">
                     Message
                 </label>
                 <textarea
@@ -125,7 +125,7 @@ const ContactForm = () => {
 const ContactSection = () => {
     const contactInfo: ContactInfo[] = [
         {
-            icon: "envelope",
+            icon: "fas fa-envelope",
             title: "Email",
             content: (
                 <a
@@ -139,14 +139,14 @@ const ContactSection = () => {
             iconColor: "text-cyan-400",
         },
         {
-            icon: "map-marker-alt",
+            icon: "fas fa-map-marker-alt",
             title: "Location",
             content: "Pune, India",
             bgColor: "bg-blue-900/30",
             iconColor: "text-blue-400",
         },
         {
-            icon: "phone",
+            icon: "fas fa-phone",
             title: "Phone",
             content: (
                 <a
@@ -158,6 +158,20 @@ const ContactSection = () => {
             ),
             bgColor: "bg-purple-900/30",
             iconColor: "text-purple-400",
+        },
+        {
+            icon: "fab fa-whatsapp",
+            title: "WhatsApp",
+            content: (
+                <a
+                    href="https://wa.me/917997151432"
+                    className="text-cyan-400 hover:text-cyan-300 transition"
+                >
+                    +91 79971 51432
+                </a>
+            ),
+            bgColor: "bg-green-900/30",
+            iconColor: "text-green-400",
         },
     ];
 
@@ -212,34 +226,34 @@ const ContactSection = () => {
                     </p>
                 </div>
 
-                <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="max-w-3xl mx-auto">
                     <div className="animate-fade delay-200">
-                        <div className="project-card rounded-xl p-8 h-full">
-                            <h3 className="text-xl font-bold mb-6">
-                                Contact Info
-                            </h3>
-
-                            <div className="space-y-6">
-                                {contactInfo.map((info, index) => (
-                                    <ContactInfoCard key={index} info={info} />
-                                ))}
+                        {/* Responsive Design: Stack elements on small screens */}
+                        <div className="project-card flex flex-col md:flex-row rounded-xl p-8 h-full">
+                            {/* Contact Info Section */}
+                            <div className="w-full md:w-1/2">
+                                <h3 className="text-xl font-bold mb-4">
+                                    Contact Info
+                                </h3>
+                                <div className="space-y-4">
+                                    {contactInfo.map((info, index) => (
+                                        <ContactInfoCard
+                                            key={index}
+                                            info={info}
+                                        />
+                                    ))}
+                                </div>
                             </div>
 
-                            <div className="mt-8 pt-6 border-t border-gray-800">
-                                <h4 className="font-medium text-gray-300 mb-4">
-                                    Find me online
-                                </h4>
-                                <SocialLinks links={socialLinks} />
+                            {/* Social Links Section */}
+                            <div className="w-full md:w-1/2 mt-8 md:mt-0 md:ml-8">
+                                <div className="ml-0 md:ml-4 md:pl-8 md:border-l border-gray-800">
+                                    <h3 className="text-xl font-bold mb-4">
+                                        Find Me Online
+                                    </h3>
+                                    <SocialLinks links={socialLinks} />
+                                </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div className="animate-fade delay-300">
-                        <div className="project-card rounded-xl p-8">
-                            <h3 className="text-xl font-bold mb-6">
-                                Send a Message
-                            </h3>
-                            <ContactForm />
                         </div>
                     </div>
                 </div>

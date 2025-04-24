@@ -16,11 +16,11 @@ const Footer = () => {
         <footer className="py-12 px-6 md:px-12 bg-gray-900 border-t border-gray-800/50">
             <div className="max-w-7xl mx-auto">
                 {/* Upper Footer */}
-                <div className="flex flex-col md:flex-row justify-between items-center">
+                <div className="flex flex-col md:flex-row md:justify-between justify-center items-center">
                     {/* Logo and Tagline */}
-                    <div className="mb-6 md:mb-0">
+                    <div className="mb-6 md:mb-0 flex flex-col items-center md:block">
                         <a
-                            href="#"
+                            href="#home"
                             className="text-2xl font-bold gradient-text glow-text"
                         >
                             VR
@@ -31,7 +31,7 @@ const Footer = () => {
                     </div>
 
                     {/* Navigation Links */}
-                    <div className="flex space-x-6">
+                    <div className="flex md:space-x-6 space-x-2">
                         {navigationLinks.map((link, index) => (
                             <a
                                 key={index}

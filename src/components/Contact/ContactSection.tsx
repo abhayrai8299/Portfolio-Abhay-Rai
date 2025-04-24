@@ -60,68 +60,6 @@ const SocialLinks = ({ links }: { links: SocialLink[] }) => {
     );
 };
 
-const ContactForm = () => {
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        // Handle form submission logic here
-    };
-
-    return (
-        <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-                <label htmlFor="name" className="block text-gray-300 mb-2">
-                    Name
-                </label>
-                <input
-                    type="text"
-                    id="name"
-                    className="form-input w-full px-4 py-3 rounded-lg focus:outline-none"
-                    required
-                />
-            </div>
-            <div>
-                <label htmlFor="email" className="block text-gray-300 mb-2">
-                    Email
-                </label>
-                <input
-                    type="email"
-                    id="email"
-                    className="form-input w-full px-4 py-3 rounded-lg focus:outline-none"
-                    required
-                />
-            </div>
-            <div>
-                <label htmlFor="subject" className="block text-gray-300 mb-2">
-                    Subject
-                </label>
-                <input
-                    type="text"
-                    id="subject"
-                    className="form-input w-full px-4 py-3 rounded-lg focus:outline-none"
-                    required
-                />
-            </div>
-            <div>
-                <label htmlFor="message" className="text-gray-300 mb-2">
-                    Message
-                </label>
-                <textarea
-                    id="message"
-                    rows={4}
-                    className="form-input w-full px-4 py-3 rounded-lg focus:outline-none"
-                    required
-                ></textarea>
-            </div>
-            <button
-                type="submit"
-                className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-medium hover:opacity-90 transition mt-4 glow"
-            >
-                Send Message
-            </button>
-        </form>
-    );
-};
-
 const ContactSection = () => {
     const contactInfo: ContactInfo[] = [
         {

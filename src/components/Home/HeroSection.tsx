@@ -92,7 +92,7 @@ const SocialLinks = () => {
 const ExperienceCircle = () => {
     return (
         <div className="relative hidden md:block">
-            <div className="w-8/12 h-8/12 rounded-full absolute top-1/2 left-3/4 transform -translate-x-1/2 -translate-y-1/2 animate-pulse overflow-hidden">
+            <div className="w-8/12 h-8/12 rounded-full absolute top-1/2 left-3/4 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden">
                 <div className="w-full h-full overflow-hidden">
                     <img
                         src={ghibliPhoto}

@@ -1,3 +1,5 @@
+import sign from "../../assets/sign.png";
+
 interface FooterLink {
     name: string;
     href: string;
@@ -45,7 +47,7 @@ const Footer = () => {
                 </div>
 
                 {/* Divider */}
-                <div className="border-t border-gray-800/50 mt-8 pt-8">
+                <div className="border-t border-gray-800/50 mt-8 pt-4">
                     {/* Lower Footer */}
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         {/* Copyright */}
@@ -53,6 +55,9 @@ const Footer = () => {
                             © {new Date().getFullYear()} Varun Raj Neyyila. All
                             rights reserved.
                         </p>
+                        <div className="w-1/2 md:w-2/12 overflow-hidden">
+                            <img src={sign} className="object-contain" />
+                        </div>
                     </div>
                 </div>
 

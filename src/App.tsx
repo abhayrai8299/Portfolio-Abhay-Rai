@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Navbar from "./components/Layout/Navbar";
 import HeroSection from "./components/Home/HeroSection";
 import ProjectsSection from "./components/Projects/ProjectsSection";
@@ -29,6 +30,7 @@ const App = () => {
             <ContactSection />
             <Footer />
             <Analytics />
+            <SpeedInsights />
         </>
     );
 };

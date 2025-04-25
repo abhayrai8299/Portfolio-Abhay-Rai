@@ -3,8 +3,8 @@ interface Project {
     title: string;
     description: string;
     technologies: string[];
-    demoLink: string;
-    codeLink: string;
+    demoLink?: string;
+    codeLink?: string;
     bgColor: string;
     iconColor: string;
 }
@@ -33,31 +33,37 @@ const ProjectCard = ({ project }: { project: Project }) => {
                     </span>
                 ))}
             </div>
+            {(project.demoLink || project.codeLink) && (
+                <div className="flex space-x-4">
+                    {project.demoLink && (
+                        <a
+                            href={project.demoLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-cyan-400 hover:text-cyan-300 transition flex items-center"
+                        >
+                            <i className="fas fa-external-link-alt mr-2"></i>{" "}
+                            Demo
+                        </a>
+                    )}
+                    {project.codeLink && (
+                        <a
+                            href={project.codeLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-400 hover:text-white transition flex items-center"
+                        >
+                            <i className="fab fa-github mr-2"></i> View Code
+                        </a>
+                    )}
+                </div>
+            )}
         </div>
     );
 };
 
 const ProjectsSection = () => {
     const projects: Project[] = [
-        {
-            icon: "laptop",
-            title: "Scrum Idea Board",
-            description:
-                "Full-stack web app for agile teams to pitch ideas, discuss them in threaded comments, and up- or down-vote. Role-based access lets admins approve or reject submissions, keeping the backlog clean and transparent. Audit logs track all changes, ensuring accountability. Built with React.js, TypeScript, and Node JS.",
-            technologies: [
-                "React",
-                "JavaScript",
-                "Node JS",
-                "Sqlite",
-                "Express",
-                "Tailwind CSS",
-                "Vite",
-            ],
-            demoLink: "#",
-            codeLink: "#",
-            bgColor: "bg-cyan-900/50",
-            iconColor: "text-cyan-300",
-        },
         {
             icon: "globe",
             title: "IMPS Framework",
@@ -75,10 +81,35 @@ const ProjectsSection = () => {
                 "Postgres SQL",
                 "Python",
             ],
-            demoLink: "#",
-            codeLink: "#",
+            demoLink: "https://www.youtube.com/watch?v=V0tR-Lx-mYY",
             bgColor: "bg-blue-900/50",
             iconColor: "text-blue-300",
+        },
+        {
+            icon: "laptop",
+            title: "Scrum Idea Board",
+            description:
+                "Full-stack web app for agile teams to pitch ideas, discuss them in threaded comments, and up- or down-vote. Role-based access lets admins approve or reject submissions, keeping the backlog clean and transparent. Audit logs track all changes, ensuring accountability. Built with React.js, TypeScript, and Node JS.",
+            technologies: [
+                "React",
+                "JavaScript",
+                "Node JS",
+                "Sqlite",
+                "Express",
+                "Tailwind CSS",
+                "Vite",
+            ],
+            bgColor: "bg-cyan-900/50",
+            iconColor: "text-cyan-300",
+        },
+        {
+            icon: "cloud",
+            title: "Weather App",
+            description:
+                "A weather app that provides real-time weather updates and forecasts. Built with React.js, Javascript, and Vite, it fetches data from a weather API and displays it in a user-friendly interface. The app is responsive and works seamlessly on both desktop and mobile devices.",
+            technologies: ["React", "JavaScript", "Tailwind CSS", "Vite"],
+            bgColor: "bg-purple-900/50",
+            iconColor: "text-purple-300",
         },
     ];
 
@@ -98,9 +129,22 @@ const ProjectsSection = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {projects.map((project, index) => (
-                        <ProjectCard key={index} project={project} />
-                    ))}
+                    {projects.map((project, index, arr) => {
+                        const isLastAndOdd =
+                            arr.length % 2 !== 0 && index === arr.length - 1;
+                        return (
+                            <div
+                                key={index}
+                                className={
+                                    isLastAndOdd
+                                        ? "md:col-span-2 md:justify-self-center"
+                                        : ""
+                                }
+                            >
+                                <ProjectCard project={project} />
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
 

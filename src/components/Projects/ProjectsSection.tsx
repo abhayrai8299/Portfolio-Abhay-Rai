@@ -87,9 +87,9 @@ const ProjectsSection = () => {
         },
         {
             icon: "laptop",
-            title: "Scrum Idea Board",
+            title: "Agile Idea Management Platform",
             description:
-                "Full-stack web app for agile teams to pitch ideas, discuss them in threaded comments, and up- or down-vote. Role-based access lets admins approve or reject submissions, keeping the backlog clean and transparent. Audit logs track all changes, ensuring accountability. Built with React.js, TypeScript, and Node JS.",
+                "Full-stack web app for agile teams to pitch ideas, discuss them in threaded comments, and up- or down-vote. Role-based access lets admins approve or reject submissions, keeping the backlog clean and transparent. Audit logs track all changes, ensuring accountability. Built with React.js, JavaScript, and Node JS.",
             technologies: [
                 "React",
                 "JavaScript",

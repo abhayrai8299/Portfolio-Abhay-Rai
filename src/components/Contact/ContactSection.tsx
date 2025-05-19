@@ -26,7 +26,7 @@ const ContactInfoCard = ({ info }: { info: ContactInfo }) => {
             <div>
                 <h4 className="font-medium text-gray-300 mb-1">{info.title}</h4>
                 {typeof info.content === "string" ? (
-                    <p className="text-gray-400">{info.content}</p>
+                    <p className="text-gray-400 text-l">{info.content}</p>
                 ) : (
                     info.content
                 )}
@@ -37,7 +37,7 @@ const ContactInfoCard = ({ info }: { info: ContactInfo }) => {
 
 const SocialLinks = ({ links }: { links: SocialLink[] }) => {
     return (
-        <div className="flex-col space-y-3">
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {links.map((link, index) => (
                 <a
                     key={index}
@@ -45,14 +45,12 @@ const SocialLinks = ({ links }: { links: SocialLink[] }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <div key={index} className="flex items-center mb-4">
-                        <div
-                            key={index}
-                            className={`w-10 h-10 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-300 hover:text-white ${link.hoverColor} transition glow`}
-                        >
-                            <i className={link.icon}></i>
-                        </div>
-                        <span className="ml-4 text-gray-400">{link.name}</span>
+                    <div
+                        key={index}
+                        className={`w-full p-4 rounded-xl bg-gray-800/50 flex flex-col justify-center items-center ${link.hoverColor} transition glow`}
+                    >
+                        <i className={`${link.icon} text-2xl`} />
+                        <h2 className="pt-4">{link.name}</h2>
                     </div>
                 </a>
             ))}
@@ -68,7 +66,7 @@ const ContactSection = () => {
             content: (
                 <a
                     href="mailto:neyyilavarunraj123@gmail.com"
-                    className="text-cyan-400 hover:text-cyan-300 transition"
+                    className="text-cyan-400 hover:text-cyan-300 transition text-l break-all"
                 >
                     neyyilavarunraj123@gmail.com
                 </a>
@@ -89,7 +87,7 @@ const ContactSection = () => {
             content: (
                 <a
                     href="tel:+917997151432"
-                    className="text-cyan-400 hover:text-cyan-300 transition"
+                    className="text-cyan-400 hover:text-cyan-300 transition text-l"
                 >
                     +91 79971 51432
                 </a>
@@ -103,7 +101,7 @@ const ContactSection = () => {
             content: (
                 <a
                     href="https://wa.me/917997151432"
-                    className="text-cyan-400 hover:text-cyan-300 transition"
+                    className="text-cyan-400 hover:text-cyan-300 transition text-l"
                 >
                     +91 79971 51432
                 </a>
@@ -133,16 +131,22 @@ const ContactSection = () => {
             name: "Medium",
         },
         {
+            icon: "fa-regular fa-address-card",
+            href: "https://topmate.io/varunrobust",
+            hoverColor: "hover:bg-green-600",
+            name: "Topmate",
+        },
+        {
             icon: "fa-brands fa-instagram",
             href: "https://www.instagram.com/varunrobust/",
             hoverColor: "hover:bg-purple-600",
             name: "Instagram",
         },
         {
-            icon: "fa-regular fa-address-card",
-            href: "https://topmate.io/varunrobust",
-            hoverColor: "hover:bg-green-600",
-            name: "Topmate",
+            icon: "fa-brands fa-facebook",
+            href: "https://www.facebook.com/varunrobust/",
+            hoverColor: "hover:bg-blue-600",
+            name: "Facebook",
         },
     ];
 
@@ -152,19 +156,20 @@ const ContactSection = () => {
             className="py-20 px-6 md:px-12 bg-gray-900/50 relative"
         >
             <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-16">
+                <div className="text-center mb-16 flex flex-col items-center">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-fade">
                         <span className="gradient-text glow-text">
                             Let's Connect
                         </span>
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto animate-fade delay-100">
-                        Interested in working together or have a project in
-                        mind? Get in touch!
-                    </p>
+                    <div className="bg-[#1e1e1e] w-11/12 md:w-1/2 flex items-center justify-center rounded-xl p-2 code-fira-font">
+                        <span className="text-cyan-400 mr-2">1</span>
+                        <span className="text-cyan-400 mr-2">|</span>
+                        import * as Varun_Raj from "visionary-runtime";
+                    </div>
                 </div>
 
-                <div className="max-w-3xl mx-auto">
+                <div className="max-w-4xl mx-auto">
                     <div className="animate-fade delay-200">
                         {/* Responsive Design: Stack elements on small screens */}
                         <div className="project-card flex flex-col md:flex-row rounded-xl p-8 h-full">
@@ -184,7 +189,7 @@ const ContactSection = () => {
                             </div>
 
                             {/* Social Links Section */}
-                            <div className="w-full md:w-1/2 mt-8 md:mt-0 md:ml-8">
+                            <div className="w-full md:w-3/4 mt-8 md:mt-0 md:ml-8">
                                 <div className="ml-0 md:ml-4 md:pl-8 md:border-l border-gray-800">
                                     <h3 className="text-xl font-bold mb-4">
                                         Find Me Online

@@ -28,7 +28,7 @@ const Navbar = () => {
                     href="#home"
                     className="text-2xl font-bold gradient-text glow-text animate-fade"
                 >
-                    VR
+                    {`<VR />`}
                 </a>
                 <div className="hidden md:flex md:items-center space-x-8">
                     {navigationItems.map((item, index) => (

@@ -2,6 +2,9 @@
 
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
 
 :root {
     --primary: #00f0ff;
@@ -304,4 +307,8 @@ body {
 #splash-screen.hidden {
     opacity: 0;
     pointer-events: none;
+}
+
+.code-fira-font {
+    font-family: 'Fira Mono', monospace;
 }

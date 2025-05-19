@@ -25,11 +25,11 @@ const Footer = () => {
                             href="#home"
                             className="text-2xl font-bold gradient-text glow-text"
                         >
-                            VR
+                            {`<> VR </>`}
                         </a>
-                        <p className="text-gray-400 mt-2">
-                            Building the future, one line of code at a time.
-                        </p>
+                        <h4 className="text-gray-400 mt-2">
+                            {`const { V, R } = Dev ;`}
+                        </h4>
                     </div>
 
                     {/* Navigation Links */}
@@ -60,9 +60,6 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-
-                {/* Background Gradient */}
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
             </div>
         </footer>
     );

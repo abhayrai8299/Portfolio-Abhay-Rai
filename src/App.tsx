@@ -27,6 +27,9 @@ const App = () => {
             {showSplash ? (
                 <div id="splash-screen">
                     <img src={sign} alt="My Logo" />
+                    <div className="absolute bottom-10 left-5/12 text-xs text-white code-fira-font">
+                        {`>_ devTip: Use Big Screens 🚀`}
+                    </div>
                 </div>
             ) : (
                 <div id="main-content">

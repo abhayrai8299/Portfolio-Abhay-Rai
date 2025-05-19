@@ -38,7 +38,7 @@ const Footer = () => {
                             <a
                                 key={index}
                                 href={link.href}
-                                className="text-gray-400 hover:text-white transition"
+                                className="text-gray-400 hover:text-white transition underline underline-offset-8 md:no-underline hover:underline"
                             >
                                 {link.name}
                             </a>

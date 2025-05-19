@@ -46,7 +46,7 @@ const HeroSection = () => {
                 </div>
                 <ExperienceCircle />
             </div>
-            <div className="absolute bottom-10 left-1/2 animate-bounce">
+            <div className="absolute bottom-2 md:bottom-10 left-1/2 animate-bounce">
                 <a href="#projects" className="text-primary-500 text-2xl">
                     <i className="fas fa-chevron-down" />
                 </a>

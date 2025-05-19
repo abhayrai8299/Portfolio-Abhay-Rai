@@ -46,7 +46,8 @@ const Navbar = () => {
                         href="https://drive.google.com/drive/folders/1NxG_LrwUine5Ae9hhlFunhN5h-ZEdvyM"
                         className="px-3 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-small transition glow animate-fade delay-700"
                     >
-                        Resume
+                        <i className="fas fa-file-arrow-down mr-2 animate-bounce" />
+                        <span>Resume</span>
                     </a>
                 </div>
                 <button

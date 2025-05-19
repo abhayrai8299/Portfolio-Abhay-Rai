@@ -38,7 +38,9 @@ const SkillCategoryCard = ({ category }: { category: SkillCategory }) => {
     return (
         <div
             className={`project-card rounded-xl p-6 animate-fade delay-200 ${
-                category.title.includes("Front") ? "w-2/4" : "w-1/3"
+                category.title.includes("Front")
+                    ? "w-full md:w-2/4"
+                    : "w-full md:w-1/3"
             }`}
         >
             <div className="flex items-center justify-center mb-8">
@@ -258,7 +260,7 @@ const SkillsSection = () => {
                     </p>
                 </div>
 
-                <div className="flex gap-5">
+                <div className="flex flex-col md:flex-row gap-5">
                     {skillCategories.map((category, index) => (
                         <SkillCategoryCard key={index} category={category} />
                     ))}

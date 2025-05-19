@@ -19,6 +19,15 @@
 .left-3\/4 {
   left: calc(3/4 * 100%);
 }
+.left-5\/12 {
+  left: calc(5/12 * 100%);
+}
+.left-\[1\/2-20\] {
+  left: 1/2-20;
+}
+.left-\[1\/2-50\] {
+  left: 1/2-50;
+}
 .z-10 {
   z-index: 10;
 }
@@ -40,11 +49,11 @@
 .hidden {
   display: none;
 }
+.inline {
+  display: inline;
+}
 .h-1\/2 {
   height: calc(1/2 * 100%);
-}
-.h-1\/12 {
-  height: calc(1/12 * 100%);
 }
 .h-3\/4 {
   height: calc(3/4 * 100%);
@@ -52,41 +61,20 @@
 .h-8\/12 {
   height: calc(8/12 * 100%);
 }
-.h-auto {
-  height: auto;
-}
 .h-full {
   height: 100%;
 }
+.h-screen {
+  height: 100vh;
+}
 .w-1\/2 {
   width: calc(1/2 * 100%);
-}
-.w-1\/3 {
-  width: calc(1/3 * 100%);
-}
-.w-1\/4 {
-  width: calc(1/4 * 100%);
-}
-.w-1\/8 {
-  width: calc(1/8 * 100%);
-}
-.w-2\/4 {
-  width: calc(2/4 * 100%);
-}
-.w-2\/9 {
-  width: calc(2/9 * 100%);
-}
-.w-2\/12 {
-  width: calc(2/12 * 100%);
 }
 .w-3\/4 {
   width: calc(3/4 * 100%);
 }
 .w-8\/12 {
   width: calc(8/12 * 100%);
-}
-.w-9\/12 {
-  width: calc(9/12 * 100%);
 }
 .w-11\/12 {
   width: calc(11/12 * 100%);
@@ -173,6 +161,12 @@
 .break-all {
   word-break: break-all;
 }
+.underline {
+  text-decoration-line: underline;
+}
+.underline-offset-8 {
+  text-underline-offset: 8px;
+}
 .transition {
   transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
   transition-timing-function: var(--tw-ease, ease);
@@ -201,45 +195,17 @@
 .delay-700 {
   transition-delay: 700ms;
 }
-.hover\:\[transform\:perspective\(1000px\)_rotateX\(5deg\)_rotateY\(5deg\)_translateY\(-10px\)\] {
-  &:hover {
-    @media (hover: hover) {
-      transform: perspective(1000px) rotateX(5deg) rotateY(5deg) translateY(-10px);
-    }
-  }
-}
-.hover\:\[transform\:perspective\(1000px\)_rotateX\(10deg\)_rotateY\(10deg\)_translateY\(-10px\)\] {
-  &:hover {
-    @media (hover: hover) {
-      transform: perspective(1000px) rotateX(10deg) rotateY(10deg) translateY(-10px);
-    }
-  }
-}
-.hover\:\[transform\:perspective\(1000px\)_rotateX\(15deg\)_rotateY\(15deg\)_translateY\(-5px\)\] {
-  &:hover {
-    @media (hover: hover) {
-      transform: perspective(1000px) rotateX(15deg) rotateY(15deg) translateY(-5px);
-    }
-  }
-}
-.hover\:\[transform\:perspective\(1000px\)_rotateX\(20deg\)_rotateY\(20deg\)_translateY\(-5px\)\] {
-  &:hover {
-    @media (hover: hover) {
-      transform: perspective(1000px) rotateX(20deg) rotateY(20deg) translateY(-5px);
-    }
-  }
-}
-.hover\:\[transform\:perspective\(1000px\)_rotateX\(50deg\)_rotateY\(50deg\)_translateY\(-10px\)\] {
-  &:hover {
-    @media (hover: hover) {
-      transform: perspective(1000px) rotateX(50deg) rotateY(50deg) translateY(-10px);
-    }
-  }
-}
 .hover\:\[transform\:perspective\(1000px\)_translateY\(-5px\)\] {
   &:hover {
     @media (hover: hover) {
       transform: perspective(1000px) translateY(-5px);
+    }
+  }
+}
+.hover\:underline {
+  &:hover {
+    @media (hover: hover) {
+      text-decoration-line: underline;
     }
   }
 }

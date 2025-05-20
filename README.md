@@ -27,21 +27,6 @@ Check it out here 👉 [https://varunraj.vercel.app/](https://varunraj.vercel.ap
 
 ---
 
-## 📁 Folder Structure
-
-root/
-├── public/
-├── src/
-│ ├── assets/
-│ ├── components/
-│ ├── styles/
-│ └── App.tsx
-├── tailwind.config.js
-├── vite.config.ts
-└── README.md
-
----
-
 ## ✨ Inspirations
 
 This project draws inspiration from modern dev portfolios with a strong focus on accessibility and simplicity.

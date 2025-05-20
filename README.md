@@ -1,54 +1,64 @@
-# React + TypeScript + Vite
+# 🚀 Varun Raj's Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal developer portfolio! This showcases my work, skills, and professional experience as a Frontend and Mobile App Developer specialising in React, React Native, TypeScript, and more.
 
-Currently, two official plugins are available:
+## 🖥️ Live Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Check it out here 👉 [https://varunraj.vercel.app/](https://varunraj.vercel.app/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Built With
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Frontend**: React, TypeScript, Vite  
+- **Styling**: Tailwind CSS 
+- **State Management**: Redux 
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 💡 Features
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- 👨‍💻 Highlighted Skills with Tech Stack Icons  
+- 📱 Responsive Design for all screen sizes  
+- 🌙 Dark Mode Theme  
+- 🔗 Interactive Project Cards with live links  
+- 📄 Downloadable Resume  
+- 🧠 Clean Code & Modular Architecture
+
+---
+
+## 📁 Folder Structure
+
+root/
+├── public/
+├── src/
+│ ├── assets/
+│ ├── components/
+│ ├── styles/
+│ └── App.tsx
+├── tailwind.config.js
+├── vite.config.ts
+└── README.md
+
+---
+
+## ✨ Inspirations
+
+This project draws inspiration from modern dev portfolios with a strong focus on accessibility and simplicity.
+
+---
+
+## 📬 Contact
+
+Feel free to connect:
+
+- Email: [neyyilavarunraj123@gmail.com](mailto:neyyilavarunraj123@gmail.com)  
+- LinkedIn: [linkedin.com/in/varun-raj-neyyila](https://linkedin.com/in/varun-raj-neyyila)  
+- Medium: [medium.com/@varunrobust](https://medium.com/@varunrobust)
+
+---
+
+## 📜 License
+
+This project is licensed under the Varun Raj License 😜 — don't feel free to use and customise!
+

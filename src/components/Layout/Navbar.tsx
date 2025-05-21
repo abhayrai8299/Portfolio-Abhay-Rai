@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SoundButton } from "react-sounds";
 
 interface NavbarItem {
     name: string;
@@ -32,23 +33,39 @@ const Navbar = () => {
                 </a>
                 <div className="hidden md:flex md:items-center space-x-8">
                     {navigationItems.map((item, index) => (
-                        <a
-                            key={index}
-                            href={item.href}
-                            className={`nav-link text-gray-300 hover:text-white transition animate-fade ${item.extraStyle}`}
+                        <SoundButton
+                            sound="ui/panel_expand"
+                            soundOptions={{ volume: 1.0, rate: 0.8 }}
+                            onSoundError={(error) =>
+                                console.error("Sound error:", error)
+                            }
                         >
-                            {item.name}
-                        </a>
+                            <a
+                                key={index}
+                                href={item.href}
+                                className={`nav-link text-gray-300 hover:text-white transition animate-fade ${item.extraStyle}`}
+                            >
+                                {item.name}
+                            </a>
+                        </SoundButton>
                     ))}
-                    <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://drive.google.com/drive/folders/1NxG_LrwUine5Ae9hhlFunhN5h-ZEdvyM"
-                        className="px-3 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-small transition glow animate-fade delay-700"
+                    <SoundButton
+                        sound="ui/tab_open"
+                        soundOptions={{ volume: 1.0, rate: 0.8 }}
+                        onSoundError={(error) =>
+                            console.error("Sound error:", error)
+                        }
                     >
-                        <i className="fas fa-file-arrow-down mr-2 animate-bounce" />
-                        <span>Resume</span>
-                    </a>
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://drive.google.com/drive/folders/1NxG_LrwUine5Ae9hhlFunhN5h-ZEdvyM"
+                            className="px-3 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-small transition glow animate-fade delay-700"
+                        >
+                            <i className="fas fa-file-arrow-down mr-2 animate-bounce" />
+                            <span>Resume</span>
+                        </a>
+                    </SoundButton>
                 </div>
                 <button
                     className="md:hidden text-gray-300 hover:text-white animate-fade delay-100"

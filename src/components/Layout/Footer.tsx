@@ -1,3 +1,4 @@
+import { SoundButton } from "react-sounds";
 import sign from "../../assets/sign.png";
 
 interface FooterLink {
@@ -35,13 +36,21 @@ const Footer = () => {
                     {/* Navigation Links */}
                     <div className="flex md:space-x-6 space-x-2">
                         {navigationLinks.map((link, index) => (
-                            <a
-                                key={index}
-                                href={link.href}
-                                className="text-gray-400 hover:text-white transition underline underline-offset-8 md:no-underline hover:underline"
+                            <SoundButton
+                                sound="ui/panel_expand"
+                                soundOptions={{ volume: 1.0, rate: 0.8 }}
+                                onSoundError={(error) =>
+                                    console.error("Sound error:", error)
+                                }
                             >
-                                {link.name}
-                            </a>
+                                <a
+                                    key={index}
+                                    href={link.href}
+                                    className="text-gray-400 hover:text-white transition underline underline-offset-8 md:no-underline hover:underline"
+                                >
+                                    {link.name}
+                                </a>
+                            </SoundButton>
                         ))}
                     </div>
                 </div>

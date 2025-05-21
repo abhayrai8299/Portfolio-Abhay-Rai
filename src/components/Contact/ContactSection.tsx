@@ -1,4 +1,5 @@
 import React from "react";
+import { SoundButton } from "react-sounds";
 
 interface ContactInfo {
     icon: string;
@@ -39,20 +40,28 @@ const SocialLinks = ({ links }: { links: SocialLink[] }) => {
     return (
         <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {links.map((link, index) => (
-                <a
-                    key={index}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <SoundButton
+                    sound="ui/tab_open"
+                    soundOptions={{ volume: 1.0, rate: 0.8 }}
+                    onSoundError={(error) =>
+                        console.error("Sound error:", error)
+                    }
                 >
-                    <div
+                    <a
                         key={index}
-                        className={`w-full p-4 rounded-xl bg-gray-800/50 flex flex-col justify-center items-center ${link.hoverColor} transition glow`}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
-                        <i className={`${link.icon} text-2xl`} />
-                        <h2 className="pt-4">{link.name}</h2>
-                    </div>
-                </a>
+                        <div
+                            key={index}
+                            className={`w-full p-4 rounded-xl bg-gray-800/50 flex flex-col justify-center items-center ${link.hoverColor} transition glow`}
+                        >
+                            <i className={`${link.icon} text-2xl`} />
+                            <h2 className="pt-4">{link.name}</h2>
+                        </div>
+                    </a>
+                </SoundButton>
             ))}
         </div>
     );

@@ -1,3 +1,4 @@
+import { SoundButton } from "react-sounds";
 import ghibliPhoto from "../../assets/ghibli_photo.png";
 
 const HeroSection = () => {
@@ -29,27 +30,68 @@ const HeroSection = () => {
                         platforms.
                     </p>
                     <div className="flex space-x-4 animate-fade delay-300">
-                        <a
-                            href="#projects"
-                            className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-medium hover:opacity-90 transition glow"
+                        <SoundButton
+                            sound="ui/tab_open"
+                            soundOptions={{ volume: 1.0, rate: 0.8 }}
+                            onSoundError={(error) =>
+                                console.error("Sound error:", error)
+                            }
                         >
-                            View My Work
-                        </a>
-                        <a
-                            href="#contact"
-                            className="px-6 py-3 border border-gray-600 rounded-full font-medium hover:bg-gray-800/50 transition"
+                            <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://drive.google.com/drive/folders/1NxG_LrwUine5Ae9hhlFunhN5h-ZEdvyM"
+                                className="block md:hidden px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-small transition glow"
+                            >
+                                <i className="fas fa-file-arrow-down mr-2 animate-bounce" />
+                                <span>Resume</span>
+                            </a>
+                        </SoundButton>
+                        <SoundButton
+                            sound="ui/panel_expand"
+                            soundOptions={{ volume: 1.0, rate: 0.8 }}
+                            onSoundError={(error) =>
+                                console.error("Sound error:", error)
+                            }
                         >
-                            Contact Me
-                        </a>
+                            <a
+                                href="#projects"
+                                className="hidden md:block px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-medium hover:opacity-90 transition glow"
+                            >
+                                View My Work
+                            </a>
+                        </SoundButton>
+                        <SoundButton
+                            sound="ui/panel_expand"
+                            soundOptions={{ volume: 1.0, rate: 0.8 }}
+                            onSoundError={(error) =>
+                                console.error("Sound error:", error)
+                            }
+                        >
+                            <a
+                                href="#contact"
+                                className="px-6 py-3 border border-gray-600 rounded-full font-medium hover:bg-gray-800/50 transition"
+                            >
+                                Contact Me
+                            </a>
+                        </SoundButton>
                     </div>
                     <SocialLinks />
                 </div>
                 <ExperienceCircle />
             </div>
             <div className="absolute bottom-2 md:bottom-10 left-1/2 animate-bounce">
-                <a href="#projects" className="text-primary-500 text-2xl">
-                    <i className="fas fa-chevron-down" />
-                </a>
+                <SoundButton
+                    sound="ui/panel_expand"
+                    soundOptions={{ volume: 1.0, rate: 0.8 }}
+                    onSoundError={(error) =>
+                        console.error("Sound error:", error)
+                    }
+                >
+                    <a href="#projects" className="text-primary-500 text-2xl">
+                        <i className="fas fa-chevron-down" />
+                    </a>
+                </SoundButton>
             </div>
         </section>
     );

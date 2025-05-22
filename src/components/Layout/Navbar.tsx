@@ -25,12 +25,20 @@ const Navbar = () => {
     return (
         <nav className="fixed w-full py-6 px-6 md:px-12 z-50 backdrop-blur-md bg-opacity-80 bg-gray-900/50 border-b border-gray-800/50">
             <div className="max-w-7xl mx-auto flex justify-between items-center">
-                <a
-                    href="#home"
-                    className="text-2xl font-bold gradient-text glow-text animate-fade"
+                <SoundButton
+                    sound="ui/panel_expand"
+                    soundOptions={{ volume: 1.0, rate: 0.8 }}
+                    onSoundError={(error) =>
+                        console.error("Sound error:", error)
+                    }
                 >
-                    {`<VR />`}
-                </a>
+                    <a
+                        href="#home"
+                        className="text-2xl font-bold gradient-text glow-text animate-fade"
+                    >
+                        {`<VR />`}
+                    </a>
+                </SoundButton>
                 <div className="hidden md:flex md:items-center space-x-8">
                     {navigationItems.map((item, index) => (
                         <SoundButton
@@ -78,24 +86,40 @@ const Navbar = () => {
             {isMenuOpen && (
                 <div className="md:hidden mt-4 bg-gray-900/90 border-t border-gray-800/50">
                     {navigationItems.map((item, index) => (
-                        <a
-                            key={index}
-                            href={item.href}
+                        <SoundButton
+                            key={index.toString()}
+                            sound="ui/panel_expand"
+                            soundOptions={{ volume: 1.0, rate: 0.8 }}
+                            onSoundError={(error) =>
+                                console.error("Sound error:", error)
+                            }
                             className={`block py-2 px-4 text-gray-300 hover:text-white transition`}
+                        >
+                            <a
+                                href={item.href}
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                {item.name}
+                            </a>
+                        </SoundButton>
+                    ))}
+                    <SoundButton
+                        sound="ui/panel_expand"
+                        soundOptions={{ volume: 1.0, rate: 0.8 }}
+                        onSoundError={(error) =>
+                            console.error("Sound error:", error)
+                        }
+                    >
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://drive.google.com/drive/folders/1NxG_LrwUine5Ae9hhlFunhN5h-ZEdvyM"
+                            className="block py-2 px-4 text-gray-300 hover:text-white transition"
                             onClick={() => setIsMenuOpen(false)}
                         >
-                            {item.name}
+                            Resume
                         </a>
-                    ))}
-                    <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://drive.google.com/drive/folders/1NxG_LrwUine5Ae9hhlFunhN5h-ZEdvyM"
-                        className="block py-2 px-4 text-gray-300 hover:text-white transition"
-                        onClick={() => setIsMenuOpen(false)}
-                    >
-                        Resume
-                    </a>
+                    </SoundButton>
                 </div>
             )}
         </nav>

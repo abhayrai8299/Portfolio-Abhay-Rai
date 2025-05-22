@@ -36,7 +36,7 @@ const HeroSection = () => {
                         interfaces or building apps for iOS and Android
                         platforms.
                     </p>
-                    <div className="flex space-x-4 animate-fade delay-300">
+                    <div className="flex animate-fade delay-300">
                         <SoundButton
                             sound="ui/tab_open"
                             soundOptions={{ volume: 1.0, rate: 0.8 }}
@@ -77,7 +77,7 @@ const HeroSection = () => {
                         >
                             <a
                                 href="#contact"
-                                className="px-6 py-3 border border-gray-600 rounded-full font-medium hover:bg-gray-800/50 transition"
+                                className="ml-4 md:ml-8 px-6 py-3 border border-gray-600 rounded-full font-medium hover:bg-gray-800/50 transition"
                             >
                                 Contact Me
                             </a>

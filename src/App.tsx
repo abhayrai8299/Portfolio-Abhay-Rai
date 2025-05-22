@@ -19,7 +19,6 @@ const App = () => {
         const splashTimeout = setTimeout(() => {
             setShowSplash(false);
         }, 2000);
-
         return () => clearTimeout(splashTimeout);
     }, []);
 
@@ -27,9 +26,12 @@ const App = () => {
         <SoundProvider preload={["ui/panel_expand", "ui/tab_open"]}>
             <>
                 {showSplash ? (
-                    <div id="splash-screen">
+                    <div
+                        id="splash-screen"
+                        className="flex flex-col items-center justify-center"
+                    >
                         <img src={sign} alt="My Logo" />
-                        <div className="absolute bottom-15 md:bottom-10 left-5/12 text-xs text-white code-fira-font">
+                        <div className="text-xs text-white code-fira-font md:hidden">
                             {`>_ devTip: Use Big Screens 🚀`}
                         </div>
                     </div>

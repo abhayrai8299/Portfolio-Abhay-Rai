@@ -34,6 +34,7 @@ const Navbar = () => {
                 <div className="hidden md:flex md:items-center space-x-8">
                     {navigationItems.map((item, index) => (
                         <SoundButton
+                            key={index.toString()}
                             sound="ui/panel_expand"
                             soundOptions={{ volume: 1.0, rate: 0.8 }}
                             onSoundError={(error) =>

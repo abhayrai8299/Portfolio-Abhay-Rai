@@ -1,6 +1,13 @@
 import { SoundButton } from "react-sounds";
 import ghibliPhoto from "../../assets/ghibli_photo.png";
 
+interface socialLinkData {
+    name: string;
+    href: string;
+    extraStyle: string;
+    iconName: string;
+}
+
 const HeroSection = () => {
     return (
         <section
@@ -97,41 +104,57 @@ const HeroSection = () => {
     );
 };
 
+const socialLinksData: socialLinkData[] = [
+    {
+        name: "github",
+        href: "https://github.com/varunrobust",
+        extraStyle: "hover:bg-cyan-500",
+        iconName: "fab fa-github",
+    },
+    {
+        name: "linkedIn",
+        href: "https://www.linkedin.com/in/varun-raj-neyyila/",
+        extraStyle: "hover:bg-blue-600",
+        iconName: "fab fa-linkedin-in",
+    },
+    {
+        name: "medium",
+        href: "https://medium.com/%40varunrobust",
+        extraStyle: "hover:bg-blue-400",
+        iconName: "fab fa-medium",
+    },
+    {
+        name: "topmate",
+        href: "https://topmate.io/varunrobust",
+        extraStyle: "hover:bg-purple-600",
+        iconName: "fas fa-laptop",
+    },
+];
+
 const SocialLinks = () => {
     return (
         <div className="flex space-x-4 pt-4 animate-fade delay-400">
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://github.com/varunrobust"
-                className="w-10 h-10 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-300 hover:text-white hover:bg-cyan-500 transition"
-            >
-                <i className="fab fa-github"></i>
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.linkedin.com/in/varun-raj-neyyila/"
-                className="w-10 h-10 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"
-            >
-                <i className="fab fa-linkedin-in"></i>
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://medium.com/%40varunrobust"
-                className="w-10 h-10 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-400 transition"
-            >
-                <i className="fab fa-medium"></i>
-            </a>
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://topmate.io/varunrobust"
-                className="w-10 h-10 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-300 hover:text-white hover:bg-purple-600 transition"
-            >
-                <i className="fas fa-laptop"></i>
-            </a>
+            {socialLinksData.map((linkData, index) => {
+                return (
+                    <SoundButton
+                        key={index.toString()}
+                        sound="ui/tab_open"
+                        soundOptions={{ volume: 1.0, rate: 0.8 }}
+                        onSoundError={(error) =>
+                            console.error("Sound error:", error)
+                        }
+                    >
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={linkData.href}
+                            className={`w-10 h-10 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-300 hover:text-white transition ${linkData.extraStyle}`}
+                        >
+                            <i className={linkData.iconName}></i>
+                        </a>
+                    </SoundButton>
+                );
+            })}
         </div>
     );
 };

@@ -10,7 +10,7 @@ import ContactSection from "./components/Contact/ContactSection";
 import Footer from "./components/Layout/Footer";
 import CustomCursor from "./components/Layout/CustomCursor";
 import sign from "./assets/sign.png";
-import { Sound, SoundProvider } from "react-sounds";
+import { SoundProvider } from "react-sounds";
 
 const App = () => {
     const [showSplash, setShowSplash] = useState(true);
@@ -24,29 +24,15 @@ const App = () => {
     }, []);
 
     return (
-        <SoundProvider
-            preload={["system/boot_up", "ui/panel_expand", "ui/tab_open"]}
-        >
+        <SoundProvider preload={["ui/panel_expand", "ui/tab_open"]}>
             <>
                 {showSplash ? (
-                    <Sound
-                        name="system/boot_up"
-                        trigger="mount"
-                        options={{ volume: 1.0 }}
-                        onLoad={() => console.log("Sound loaded")}
-                        onPlay={() => console.log("Sound playing")}
-                        onStop={() => console.log("Sound stopped")}
-                        onError={(error) =>
-                            console.error("Sound error:", error)
-                        }
-                    >
-                        <div id="splash-screen">
-                            <img src={sign} alt="My Logo" />
-                            <div className="absolute bottom-30 md:bottom-10 left-5/12 text-xs text-white code-fira-font">
-                                {`>_ devTip: Use Big Screens 🚀`}
-                            </div>
+                    <div id="splash-screen">
+                        <img src={sign} alt="My Logo" />
+                        <div className="absolute bottom-15 md:bottom-10 left-5/12 text-xs text-white code-fira-font">
+                            {`>_ devTip: Use Big Screens 🚀`}
                         </div>
-                    </Sound>
+                    </div>
                 ) : (
                     <div id="main-content">
                         {/* floating circles – pure decoration */}

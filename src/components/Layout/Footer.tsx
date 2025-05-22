@@ -37,6 +37,7 @@ const Footer = () => {
                     <div className="flex md:space-x-6 space-x-2">
                         {navigationLinks.map((link, index) => (
                             <SoundButton
+                                key={index.toString()}
                                 sound="ui/panel_expand"
                                 soundOptions={{ volume: 1.0, rate: 0.8 }}
                                 onSoundError={(error) =>

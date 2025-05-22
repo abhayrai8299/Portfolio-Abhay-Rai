@@ -41,6 +41,7 @@ const SocialLinks = ({ links }: { links: SocialLink[] }) => {
         <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {links.map((link, index) => (
                 <SoundButton
+                    key={index.toString()}
                     sound="ui/tab_open"
                     soundOptions={{ volume: 1.0, rate: 0.8 }}
                     onSoundError={(error) =>

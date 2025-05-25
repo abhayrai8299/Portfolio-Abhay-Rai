@@ -11,6 +11,7 @@ import Footer from "./components/Layout/Footer";
 import CustomCursor from "./components/Layout/CustomCursor";
 import sign from "./assets/sign.png";
 import { SoundProvider } from "react-sounds";
+import Achievements from "./components/Achievements/Achievements";
 
 const App = () => {
     const [showSplash, setShowSplash] = useState(true);
@@ -50,6 +51,7 @@ const App = () => {
                         <Navbar />
                         <HeroSection />
                         <ProjectsSection />
+                        <Achievements />
                         <ExperienceSection />
                         <SkillsSection />
                         <ContactSection />

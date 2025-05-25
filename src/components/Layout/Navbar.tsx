@@ -17,9 +17,10 @@ const Navbar = () => {
     const navigationItems: NavbarItem[] = [
         { name: "Home", href: "#home", extraStyle: "delay-100" },
         { name: "Projects", href: "#projects", extraStyle: "delay-200" },
-        { name: "Experience", href: "#experience", extraStyle: "delay-300" },
-        { name: "Skills", href: "#skills", extraStyle: "delay-400" },
-        { name: "Contact", href: "#contact", extraStyle: "delay-500" },
+        { name: "Honours", href: "#achievements", extraStyle: "delay-300" },
+        { name: "Experience", href: "#experience", extraStyle: "delay-400" },
+        { name: "Skills", href: "#skills", extraStyle: "delay-500" },
+        { name: "Contact", href: "#contact", extraStyle: "delay-600" },
     ];
 
     return (

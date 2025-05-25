@@ -1,5 +1,6 @@
 import { SoundButton } from "react-sounds";
 import ghibliPhoto from "../../assets/ghibli_photo.png";
+import { useEffect, useState } from "react";
 
 interface socialLinkData {
     name: string;
@@ -9,6 +10,18 @@ interface socialLinkData {
 }
 
 const HeroSection = () => {
+    const [showText, setShowText] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setShowText((prev) => (prev + 1) % 4);
+        }, 6000);
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, []);
+
     return (
         <section
             id="home"
@@ -17,13 +30,35 @@ const HeroSection = () => {
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6 relative z-10">
                     <h1 className="text-4xl md:text-6xl font-bold animate-fade">
-                        Hi, I'm{" "}
-                        <span className="gradient-text glow-text">
-                            Varun Raj
-                        </span>
+                        Hi, I'm
                     </h1>
-                    <h2 className="text-xl font-medium text-gray-300 sm:animate-fade typewriter delay-100">
-                        Frontend Engineer & Mobile Developer
+                    <h2
+                        className={`text-4xl font-bold text-cyan-300 animate-fade typewriter my-4 ${
+                            showText === 0 ? "block" : "hidden"
+                        }`}
+                    >
+                        Frontend Engineer
+                    </h2>
+                    <h2
+                        className={`text-4xl font-semibold text-blue-400 animate-fade typewriter my-4 ${
+                            showText === 1 ? "block" : "hidden"
+                        }`}
+                    >
+                        Mobile App Dev
+                    </h2>
+                    <h2
+                        className={`text-4xl font-bold text-purple-400 animate-fade typewriter my-4 ${
+                            showText === 2 ? "block" : "hidden"
+                        }`}
+                    >
+                        Aspiring Architect
+                    </h2>
+                    <h2
+                        className={`gradient-text glow-text typewriter text-4xl md:text-6xl font-bold h-16 ${
+                            showText === 3 ? "block" : "hidden"
+                        }`}
+                    >
+                        Varun Raj
                     </h2>
                     <p className="text-gray-400 max-w-lg animate-fade delay-200">
                         Skilled React JS and React Native developer with a focus

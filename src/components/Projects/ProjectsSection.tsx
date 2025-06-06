@@ -101,6 +101,8 @@ const ProjectsSection = () => {
             ],
             bgColor: "bg-cyan-900/50",
             iconColor: "text-cyan-300",
+            demoLink: "https://idea-mgmt.vercel.app/",
+            codeLink: "https://github.com/varunrobust/idea_management_frontend",
         },
         {
             icon: "cloud",
@@ -110,6 +112,7 @@ const ProjectsSection = () => {
             technologies: ["React", "JavaScript", "Tailwind CSS", "Vite"],
             bgColor: "bg-purple-900/50",
             iconColor: "text-purple-300",
+            codeLink: "https://github.com/varunrobust/weather_app",
         },
     ];
 

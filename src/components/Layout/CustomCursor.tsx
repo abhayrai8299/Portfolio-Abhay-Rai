@@ -29,7 +29,7 @@ const CustomCursor = () => {
         };
         document
             .querySelectorAll<HTMLElement>(
-                "a,button,input,textarea,.project-card"
+                "a,button,input,textarea,.project-card,.skill-item"
             )
             .forEach((el) => {
                 el.addEventListener("mouseenter", addHover);

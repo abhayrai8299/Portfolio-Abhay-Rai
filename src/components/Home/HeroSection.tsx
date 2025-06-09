@@ -54,22 +54,23 @@ const HeroSection = () => {
                         Aspiring Architect
                     </h2>
                     <h2
-                        className={`gradient-text glow-text typewriter text-4xl md:text-6xl font-bold h-16 ${
+                        className={`gradient-text glow-text typewriter text-4xl md:text-6xl font-bold md:h-16 ${
                             showText === 3 ? "block" : "hidden"
                         }`}
                     >
                         Varun Raj
                     </h2>
                     <p className="text-gray-400 max-w-lg animate-fade delay-200">
-                        Skilled React JS and React Native developer with a focus
-                        on cross-platform development. Combining expertise in
-                        mobile and web application development, excels in
-                        crafting seamless user experiences. Proficient in
-                        JavaScript and TypeScript, bringing strong typing and
-                        enhanced tooling to projects. Dedicated to delivering
-                        robust solutions, whether creating responsive web
-                        interfaces or building apps for iOS and Android
-                        platforms.
+                        React JS and React Native Developer with 3 years of
+                        experience in designing and deploying scalable
+                        cross-platform applications. Proficient in JavaScript,
+                        TypeScript, React and React Native, aligned with 3-tier
+                        architecture. Specialized in web and mobile development
+                        with a strong focus on UI/UX, performance optimization,
+                        and secure deployments. Experienced with Agile
+                        methodologies, CI/CD pipelines (GitLab, Docker), AWS
+                        cloud environments and leveraged AI in web and mobile
+                        applications.
                     </p>
                     <div className="flex animate-fade delay-300">
                         <SoundButton

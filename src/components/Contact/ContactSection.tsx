@@ -210,16 +210,6 @@ const ContactSection = () => {
                         </div>
                     </div>
                 </div>
-
-                {/* Background Elements */}
-                <div
-                    className="floating-circle w-72 h-72 bg-cyan-500/10 top-20 right-10 animate-float"
-                    style={{ animationDelay: "0.5s" }}
-                ></div>
-                <div
-                    className="floating-circle w-96 h-96 bg-blue-500/10 bottom-20 left-20 animate-float"
-                    style={{ animationDelay: "1.5s" }}
-                ></div>
             </div>
         </section>
     );

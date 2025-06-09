@@ -1,4 +1,6 @@
 import React from "react";
+import Marquee from "react-fast-marquee";
+import { playSound } from "react-sounds";
 
 interface Skill {
     name: string;
@@ -20,7 +22,8 @@ const SkillItem = ({ skill }: { skill: Skill }) => {
     return (
         <div
             key={skill.name}
-            className="p-3 rounded-xl bg-slate-800 text-white flex items-center justify-center transition-transform hover:[transform:perspective(1000px)_translateY(-5px)]"
+            className="p-3 rounded-xl bg-slate-800 text-white flex items-center justify-center transition-transform hover:[transform:perspective(1000px)_translateY(-5px)] skill-item"
+            onMouseEnter={() => playSound("ui/button_soft")}
         >
             {typeof skill.icon != "string" ? (
                 skill.icon
@@ -37,11 +40,7 @@ const SkillItem = ({ skill }: { skill: Skill }) => {
 const SkillCategoryCard = ({ category }: { category: SkillCategory }) => {
     return (
         <div
-            className={`project-card rounded-xl p-6 animate-fade delay-200 ${
-                category.title.includes("Front")
-                    ? "w-full md:w-2/4"
-                    : "w-full md:w-1/3"
-            }`}
+            className={`project-card rounded-xl p-6 animate-fade delay-200 w-96 mx-12`}
         >
             <div className="flex items-center justify-center mb-8">
                 <div
@@ -77,7 +76,19 @@ const SkillsSection = () => {
                     skillColor: "#0d1b2a",
                 },
                 {
+                    name: "Next.js",
+                    icon: <img src="/next.png" className="w-7 h-7 mr-3" />,
+                    iconColor: "#61DBFB",
+                    skillColor: "#0d1b2a",
+                },
+                {
                     name: "Redux",
+                    icon: <img src="/redux.png" className="w-6 h-6 mr-4" />,
+                    iconColor: "#764abc",
+                    skillColor: "#0d1b2a",
+                },
+                {
+                    name: "Redux Toolkit",
                     icon: <img src="/redux.png" className="w-6 h-6 mr-4" />,
                     iconColor: "#764abc",
                     skillColor: "#0d1b2a",
@@ -133,6 +144,55 @@ const SkillsSection = () => {
             ],
         },
         {
+            title: "Backend",
+            icon: "server",
+            color: "text-purple-400",
+            bgColor: "bg-purple-900/30",
+            skills: [
+                {
+                    name: "Node.js",
+                    icon: "fab fa-node",
+                    iconColor: "#80ef80",
+                    skillColor: "#0d1b2a",
+                },
+                {
+                    name: "Express",
+                    icon: (
+                        <img
+                            src="/express.png"
+                            className="w-5 h-5 mr-3 filter invert"
+                        />
+                    ),
+                    iconColor: "white",
+                    skillColor: "#0d1b2a",
+                },
+                {
+                    name: "Firebase",
+                    icon: "fas fa-fire",
+                    iconColor: "#f97316",
+                    skillColor: "#0d1b2a",
+                },
+                {
+                    name: "Python",
+                    icon: "fab fa-python",
+                    iconColor: "#a855f7",
+                    skillColor: "#0d1b2a",
+                },
+                {
+                    name: "SQL",
+                    icon: "fas fa-database",
+                    iconColor: "#3b82f6",
+                    skillColor: "#0d1b2a",
+                },
+                {
+                    name: "PostgreSQL",
+                    icon: "fas fa-database",
+                    iconColor: "#3b82f6",
+                    skillColor: "#0d1b2a",
+                },
+            ],
+        },
+        {
             title: "Mobile",
             icon: "mobile-alt",
             color: "text-blue-400",
@@ -160,44 +220,6 @@ const SkillsSection = () => {
                     name: "Kotlin",
                     icon: "fab fa-android",
                     iconColor: "#80ef00",
-                    skillColor: "#0d1b2a",
-                },
-            ],
-        },
-        {
-            title: "Backend",
-            icon: "server",
-            color: "text-purple-400",
-            bgColor: "bg-purple-900/30",
-            skills: [
-                {
-                    name: "Node.js",
-                    icon: "fab fa-node",
-                    iconColor: "#80ef80",
-                    skillColor: "#0d1b2a",
-                },
-                {
-                    name: "Java",
-                    icon: "fab fa-java",
-                    iconColor: "white",
-                    skillColor: "#0d1b2a",
-                },
-                {
-                    name: "Firebase",
-                    icon: "fas fa-fire",
-                    iconColor: "#f97316",
-                    skillColor: "#0d1b2a",
-                },
-                {
-                    name: "Python",
-                    icon: "fab fa-python",
-                    iconColor: "#a855f7",
-                    skillColor: "#0d1b2a",
-                },
-                {
-                    name: "SQL",
-                    icon: "fas fa-database",
-                    iconColor: "#3b82f6",
                     skillColor: "#0d1b2a",
                 },
             ],
@@ -243,11 +265,8 @@ const SkillsSection = () => {
     ];
 
     return (
-        <section
-            id="skills"
-            className="py-20 px-6 md:px-12 bg-gray-900/30 relative"
-        >
-            <div className="max-w-11/12 mx-auto flex flex-col items-center">
+        <section id="skills" className="py-20 bg-gray-900/30 relative">
+            <div className="flex flex-col items-center">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-fade">
                         <span className="gradient-text glow-text">
@@ -260,20 +279,16 @@ const SkillsSection = () => {
                     </p>
                 </div>
 
-                <div className="flex flex-col md:flex-row gap-5">
+                <Marquee
+                    pauseOnHover
+                    speed={100}
+                    gradient={false}
+                    className="w-full"
+                >
                     {skillCategories.map((category, index) => (
                         <SkillCategoryCard key={index} category={category} />
                     ))}
-                </div>
-
-                <div
-                    className="floating-circle w-64 h-64 bg-cyan-500/10 top-20 left-10 animate-float"
-                    style={{ animationDelay: "0.3s" }}
-                ></div>
-                <div
-                    className="floating-circle w-96 h-96 bg-blue-500/10 bottom-20 right-20 animate-float"
-                    style={{ animationDelay: "1.2s" }}
-                ></div>
+                </Marquee>
             </div>
         </section>
     );

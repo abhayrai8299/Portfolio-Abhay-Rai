@@ -24,7 +24,17 @@ const App = () => {
     }, []);
 
     return (
-        <SoundProvider preload={["ui/panel_expand", "ui/tab_open"]}>
+        <SoundProvider
+            preload={[
+                "ui/panel_expand",
+                "ui/tab_open",
+                "ui/item_select",
+                "ui/item_deselect",
+                "ui/button_soft",
+                "notification/completed",
+                "notification/info",
+            ]}
+        >
             <>
                 {showSplash ? (
                     <div

@@ -1,3 +1,8 @@
+import {
+    DraggableCardBody,
+    DraggableCardContainer,
+} from "../ui/draggable-card";
+
 interface Experience {
     title: string;
     company: string;
@@ -82,11 +87,8 @@ const ExperienceSection = () => {
     ];
 
     return (
-        <section
-            id="experience"
-            className="py-20 px-6 md:px-12 bg-gray-900/50 relative"
-        >
-            <div className="max-w-7xl mx-auto">
+        <section id="experience" className="py-20 bg-gray-900/50 relative">
+            <div>
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-fade">
                         <span className="gradient-text glow-text">
@@ -98,22 +100,28 @@ const ExperienceSection = () => {
                         along the way.
                     </p>
                 </div>
+                <h2 className="absolute z-0 text-gray-800 text-5xl md:text-5xl font-bold text-center w-[40%] ml-[30%] mt-24">
+                    ⚡ Oops! A Nexus Event Detected! <br />
+                    The Time Variance Authority is monitoring the timeline.
+                    <br />
+                    Stay on the destined path, or risk a visit from the TVA
+                    Minutemen.
+                    <br />
+                    <span className="text-cyan-800">
+                        Tip: Refresh to reset the timeline!
+                    </span>
+                </h2>
 
-                <div className="max-w-3xl mx-auto space-y-8">
+                <DraggableCardContainer className="w-full flex flex-col items-center justify-center space-y-8 z-50">
                     {experiences.map((experience, index) => (
-                        <ExperienceCard key={index} experience={experience} />
+                        <DraggableCardBody key={index}>
+                            <ExperienceCard
+                                key={index}
+                                experience={experience}
+                            />
+                        </DraggableCardBody>
                     ))}
-                </div>
-
-                {/* Background Elements */}
-                <div
-                    className="floating-circle w-72 h-72 bg-cyan-500/10 top-20 right-10 animate-float"
-                    style={{ animationDelay: "0.5s" }}
-                ></div>
-                <div
-                    className="floating-circle w-96 h-96 bg-blue-500/10 bottom-20 left-20 animate-float"
-                    style={{ animationDelay: "1.5s" }}
-                ></div>
+                </DraggableCardContainer>
             </div>
         </section>
     );

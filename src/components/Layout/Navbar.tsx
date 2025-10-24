@@ -69,7 +69,7 @@ const Navbar = () => {
                         <a
                             target="_blank"
                             rel="noopener noreferrer"
-                            href="https://drive.google.com/drive/folders/1NxG_LrwUine5Ae9hhlFunhN5h-ZEdvyM"
+                            href="https://drive.google.com/file/d/1Yt7fYohJCODqBsmp25873ZHAgYrAt2aN/view?usp=sharing"
                             className="px-3 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-small transition glow animate-fade delay-700"
                         >
                             <i className="fas fa-file-arrow-down mr-2 animate-bounce" />

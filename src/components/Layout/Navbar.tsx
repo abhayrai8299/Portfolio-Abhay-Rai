@@ -114,7 +114,7 @@ const Navbar = () => {
                         <a
                             target="_blank"
                             rel="noopener noreferrer"
-                            href="https://drive.google.com/drive/folders/1NxG_LrwUine5Ae9hhlFunhN5h-ZEdvyM"
+                            href="https://drive.google.com/file/d/1Yt7fYohJCODqBsmp25873ZHAgYrAt2aN/view?usp=sharing"
                             className="block py-2 px-4 text-gray-300 hover:text-white transition"
                             onClick={() => setIsMenuOpen(false)}
                         >

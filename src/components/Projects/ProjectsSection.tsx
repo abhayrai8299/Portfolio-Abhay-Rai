@@ -113,62 +113,53 @@ const ProjectCard = ({ project }: { project: Project }) => {
 const ProjectsSection = () => {
     const projects: Project[] = [
         {
-            icon: "globe",
-            title: "IMPS Framework",
+            icon: "shop",
+            title: "Cartify",
             description:
-                "Created responsive UI components with Micro Front end Architecture, using React.js, TypeScript and Vite and developed 20+ reusable components, PWA, and created few backend APIs using Python. Collaborated with teams to deliver features for a hybrid mobile app on iOS and Android using React Native, Redux, JavaScript, Webpack.",
+                "Cartify is a robust, full-featured e-commerce platform built with a micro front-end architecture and a modern tech stack. Designed for both web and mobile, it delivers a seamless shopping experience and powerful admin capabilities.",
             technologies: [
                 "React",
                 "TypeScript",
-                "Vite",
-                "React Native",
                 "Redux",
                 "Javascript",
                 "Firebase",
                 "Application Security",
                 "Postgres SQL",
-                "Python",
+                "Node JS"
             ],
-            demoLink: "https://www.youtube.com/watch?v=ov0tbAevOks",
+            demoLink: "https://cartify-7mav.onrender.com/",
             bgColor: "bg-blue-900/50",
             iconColor: "text-blue-300",
+            codeLink: "https://github.com/abhayrai8299/Cartify",
             image: "imps.png",
         },
         {
-            icon: "gears",
-            title: "Narrative Forge",
+            icon: "laptop",
+            title: "Foodigo",
             description:
-                "An innovative, full-stack application empowering writers and creators to build intricate fictional worlds and narratives collaboratively with generative AI. Leveraged a modern web stack to provide an intuitive interface for creating, iterating on, and managing dynamic lore. An ultimate tool for storytellers with AI-driven content generation.",
+            "Foodigo is a full-stack, responsive food ordering application designed with performance, scalability, and user experience in mind. Built using a micro front-end architecture, the platform supports both web and hybrid mobile app users.",
             technologies: [
                 "Next.js",
                 "TypeScript",
-                "Generative AI",
                 "Node JS",
                 "GraphQL",
                 "Express",
                 "PostgreSQL",
                 "Tailwind CSS",
-                "Shadcn UI",
             ],
             bgColor: "bg-green-900/50",
             iconColor: "text-cyan-300",
-            demoLink: "https://narrative-forge.vercel.app/",
-            codeLink: "https://github.com/varunrobust/narrative_forge_frontend",
+            demoLink: "https://abhayrai8299.github.io/meal_order/",
+            codeLink: "https://github.com/abhayrai8299/meal_order",
             image: "narrative-forge.png",
         },
         {
             icon: "laptop",
-            title: "Agile Idea Management Platform",
+            title: "Expenditure Tracker",
             description:
-                "Full-stack web app for agile teams to pitch ideas, discuss them in threaded comments, and up- or down-vote. Role-based access lets admins approve or reject submissions, keeping the backlog clean and transparent. Audit logs track all changes, ensuring accountability. Built with React.js, JavaScript, and Node JS.",
+                "A full-stack personal finance management web app built with React.js, Node.js, Express, and MongoDB. It allows users to track expenses, analyze spending trends, and visualize data using Chart.js. Designed with responsive UI, efficient state management, and secure CRUD operations. Deployed on Railway App for reliable cloud hosting.",
             technologies: [
-                "React",
-                "JavaScript",
-                "Node JS",
-                "PostgreSQL",
-                "Express",
-                "Tailwind CSS",
-                "Vite",
+                "React", "Node", "Express", "MongoDB","Railway App", "Chart.js", "CSS", "JavaScript"
             ],
             bgColor: "bg-cyan-900/50",
             iconColor: "text-cyan-300",
@@ -178,14 +169,25 @@ const ProjectsSection = () => {
         },
         {
             icon: "cloud",
-            title: "Weather App",
+            title: "Mploi",
             description:
-                "A weather app that provides real-time weather updates and forecasts. Built with React.js, Javascript, and Vite, it fetches data from a weather API and displays it in a user-friendly interface. The app is responsive and works seamlessly on both desktop and mobile devices.",
-            technologies: ["React", "JavaScript", "Tailwind CSS", "Vite"],
+                "A modern job portal platform developed using React.js, Node.js, Express.js, MongoDB, and Redux. Features include real-time job listings, role-based authentication using JWT, and advanced search filters for both recruiters and job seekers. Built with React Native support for mobile responsiveness and optimized using lazy loading for enhanced performance.",
+            technologies: ["React", "Redux", "React Native", "Node", "Express", "MongoDB", "JWT", "REST API", "CSS", "JavaScript"],
             bgColor: "bg-purple-900/50",
+            demoLink:"https://mploi.com/",
             iconColor: "text-purple-300",
-            codeLink: "https://github.com/varunrobust/weather_app",
         },
+        {
+            icon: "laptop",
+            title: "Calm Air Airline",
+            description:
+                "A responsive airline booking web platform designed for seamless flight search, booking, and management. Built with React.js, TypeScript, and Tailwind CSS, it delivers a modern, performance-optimized user experience. Integrated with real-time APIs for up-to-date flight information and follows accessibility and performance best practices.",
+            technologies: ["React", "JavaScript", "Tailwind CSS", "Node"],
+            bgColor: "bg-purple-900/50",
+            demoLink:"https://www.calmair.com/",
+            iconColor: "text-purple-300",
+        },
+        
     ];
 
     return (

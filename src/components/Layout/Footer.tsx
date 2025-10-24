@@ -26,10 +26,10 @@ const Footer = () => {
                             href="#home"
                             className="text-2xl font-bold gradient-text glow-text"
                         >
-                            {`<> VR </>`}
+                            {`<> AR </>`}
                         </a>
                         <h4 className="text-gray-400 mt-2">
-                            {`const { V, R } = Dev ;`}
+                            {`const { A, R } = Dev ;`}
                         </h4>
                     </div>
 
@@ -62,7 +62,7 @@ const Footer = () => {
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         {/* Copyright */}
                         <p className="text-gray-500 text-sm mb-4 md:mb-0">
-                            © {new Date().getFullYear()} Varun Raj Neyyila. All
+                            © {new Date().getFullYear()} Abhay Rai. All
                             rights reserved.
                         </p>
                         <div className="w-1/2 md:w-2/12 overflow-hidden">

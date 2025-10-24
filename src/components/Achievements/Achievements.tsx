@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import architect from "../../assets/architect.png";
-import award from "../../assets/wow_award.png";
-import presentation from "../../assets/presentation.png";
+import react from "../../assets/react.jpg";
+import node from "../../assets/node.jpeg";
+import systemDesign from "../../assets/systemDesign.jpg";
 import { playSound } from "react-sounds";
 
 type Achievement = {
@@ -15,29 +15,30 @@ type Achievement = {
 
 const achievements: Achievement[] = [
     {
-        imageTitle: "International Presentation",
-        title: "In-Person Presentation at Conference, Paris, France",
-        image: presentation,
+        imageTitle: "System Design",
+        title: "Frontend System Design",
+        image: systemDesign,
         description:
-            "Delivered international talk on 'Synergy of SaMD and HybridAI' at Engineering Horizons Conference, Paris, earning top speaker feedback from 100+ attendees. A conference for Engineers, by Engineers, with 430 engineers from 230 countries, a fantastic platform to connect, showcase the work, and inspire one another.",
-        extraClass: "relative sm:w-2/3 md:w-1/2",
-    },
-    {
-        imageTitle: "Architect",
-        title: "Aspiring Architect Certification",
-        image: architect,
-        description:
-            "Awarded by the Capgemini Global Certification Board for demonstrating leadership in trends-driven solution architecture. Recognized for learning and delivering innovative, scalable solutions across more than two cross-platform medical applications, integrating the latest industry best practices and technologies.",
+            "Awarded for mastering advanced frontend system design principles — including modular architecture, performance optimization, scalability, and maintainability. Gained hands-on experience designing production-ready UI systems, understanding trade-offs, and implementing efficient state and rendering patterns.",
         extraClass: "relative w-[50%] md:w-[20%]",
     },
     {
-        imageTitle: "WoW Award",
-        title: "Best Employee Award of the Year",
-        image: award,
+        imageTitle: "Node JS",
+        title: "Node JS",
+        image: node,
         description:
-            "Recognized for delivering high-impact mobile and web features adopted across projects.",
+            "Completed an in-depth Node.js course focused on backend fundamentals, asynchronous programming, REST API design, Express.js, authentication, and database integration. Built scalable server-side applications and learned best practices for high-performance backend systems.",
         extraClass: "relative sm:w-2/3 md:w-1/3",
     },
+    {
+        imageTitle: "React JS",
+        title: "React JS",
+        image: react,
+        description:
+            "Successfully completed the Namaste React course covering React’s core architecture (Fiber), reconciliation, hooks, state management, and component optimization. Developed real-world projects using modern React practices and performance-driven design.",
+        extraClass: "relative sm:w-2/3 md:w-1/3",
+    },
+
 ];
 
 const Achievements = () => {

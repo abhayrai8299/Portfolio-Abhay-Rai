@@ -37,7 +37,7 @@ const Navbar = () => {
                         href="#home"
                         className="text-2xl font-bold gradient-text glow-text animate-fade"
                     >
-                        {`<VR />`}
+                        {`<AR />`}
                     </a>
                 </SoundButton>
                 <div className="hidden md:flex md:items-center space-x-8">

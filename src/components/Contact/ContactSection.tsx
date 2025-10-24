@@ -75,10 +75,10 @@ const ContactSection = () => {
             title: "Email",
             content: (
                 <a
-                    href="mailto:neyyilavarunraj123@gmail.com"
+                    href="abhay.rai8299@gmail.com"
                     className="text-cyan-400 hover:text-cyan-300 transition text-l break-all"
                 >
-                    neyyilavarunraj123@gmail.com
+                 abhay.rai8299@gmail.com
                 </a>
             ),
             bgColor: "bg-cyan-900/30",
@@ -87,7 +87,7 @@ const ContactSection = () => {
         {
             icon: "fas fa-map-marker-alt",
             title: "Location",
-            content: "Pune, India",
+            content: "Gurgaon, India",
             bgColor: "bg-blue-900/30",
             iconColor: "text-blue-400",
         },
@@ -96,10 +96,10 @@ const ContactSection = () => {
             title: "Phone",
             content: (
                 <a
-                    href="tel:+917997151432"
+                    href="tel:+918299172633"
                     className="text-cyan-400 hover:text-cyan-300 transition text-l"
                 >
-                    +91 79971 51432
+                    +91 8299172633
                 </a>
             ),
             bgColor: "bg-purple-900/30",
@@ -110,10 +110,10 @@ const ContactSection = () => {
             title: "WhatsApp",
             content: (
                 <a
-                    href="https://wa.me/917997151432"
+                    href="https://wa.me/918299172633"
                     className="text-cyan-400 hover:text-cyan-300 transition text-l"
                 >
-                    +91 79971 51432
+                    +91 8299172633
                 </a>
             ),
             bgColor: "bg-green-900/30",
@@ -124,39 +124,15 @@ const ContactSection = () => {
     const socialLinks: SocialLink[] = [
         {
             icon: "fa-brands fa-github",
-            href: "https://github.com/varunrobust",
+            href: "https://github.com/abhayrai8299",
             hoverColor: "hover:bg-cyan-500",
             name: "GitHub",
         },
         {
             icon: "fa-brands fa-linkedin-in",
-            href: "https://www.linkedin.com/in/varun-raj-neyyila/",
+            href: "https://www.linkedin.com/in/abhay-rai-192151197/",
             hoverColor: "hover:bg-blue-600",
             name: "LinkedIn",
-        },
-        {
-            icon: "fa-brands fa-medium",
-            href: "https://medium.com/%40varunrobust",
-            hoverColor: "hover:bg-blue-400",
-            name: "Medium",
-        },
-        {
-            icon: "fa-regular fa-address-card",
-            href: "https://topmate.io/varunrobust",
-            hoverColor: "hover:bg-green-600",
-            name: "Topmate",
-        },
-        {
-            icon: "fa-brands fa-instagram",
-            href: "https://www.instagram.com/varunrobust/",
-            hoverColor: "hover:bg-purple-600",
-            name: "Instagram",
-        },
-        {
-            icon: "fa-brands fa-facebook",
-            href: "https://www.facebook.com/varunrobust/",
-            hoverColor: "hover:bg-blue-600",
-            name: "Facebook",
         },
     ];
 
@@ -175,7 +151,7 @@ const ContactSection = () => {
                     <div className="bg-[#1e1e1e] w-11/12 md:w-1/2 flex items-center justify-center rounded-xl p-2 code-fira-font">
                         <span className="text-cyan-400 mr-2">1</span>
                         <span className="text-cyan-400 mr-2">|</span>
-                        import * as Varun_Raj from "visionary-runtime";
+                        import * as Abhay Rai from "visionary-runtime";
                     </div>
                 </div>
 

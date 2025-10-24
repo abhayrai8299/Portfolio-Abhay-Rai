@@ -1,11 +1,5 @@
 import React, { useState } from "react";
 
-// PlaceholderIcon component to handle missing images
-const PlaceholderIcon = ( letter:any ) => (
-    <div className="w-6 h-6 flex items-center justify-center bg-gray-500 text-white rounded-full">
-        {letter}
-    </div>
-);
 import Marquee from "react-fast-marquee";
 import { playSound } from "react-sounds";
 

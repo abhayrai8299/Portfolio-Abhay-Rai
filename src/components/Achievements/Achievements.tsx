@@ -1,133 +1,34 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
-import react from "../../assets/react.jpg";
-import node from "../../assets/node.jpeg";
-import systemDesign from "../../assets/systemDesign.jpg";
-import { playSound } from "react-sounds";
-
-type Achievement = {
-    imageTitle: string;
-    title: string;
-    image: string;
-    description: string;
-    extraClass: string;
-};
-
-const achievements: Achievement[] = [
-    {
-        imageTitle: "System Design",
-        title: "Frontend System Design",
-        image: systemDesign,
-        description:
-            "Awarded for mastering advanced frontend system design principles — including modular architecture, performance optimization, scalability, and maintainability. Gained hands-on experience designing production-ready UI systems, understanding trade-offs, and implementing efficient state and rendering patterns.",
-        extraClass: "relative w-[50%] md:w-[20%]",
-    },
-    {
-        imageTitle: "Node JS",
-        title: "Node JS",
-        image: node,
-        description:
-            "Completed an in-depth Node.js course focused on backend fundamentals, asynchronous programming, REST API design, Express.js, authentication, and database integration. Built scalable server-side applications and learned best practices for high-performance backend systems.",
-        extraClass: "relative sm:w-2/3 md:w-1/3",
-    },
-    {
-        imageTitle: "React JS",
-        title: "React JS",
-        image: react,
-        description:
-            "Successfully completed the Namaste React course covering React’s core architecture (Fiber), reconciliation, hooks, state management, and component optimization. Developed real-world projects using modern React practices and performance-driven design.",
-        extraClass: "relative sm:w-2/3 md:w-1/3",
-    },
-
+const credentials = [
+  { icon: "fa-trophy", value: "Star of the Quarter", label: "Nagarro · 2024" },
+  { icon: "fa-code", value: "6 Star", label: "HackerRank · Competitive Programming", link: "https://www.hackerrank.com/profile/abhay_rai8299" },
+  { icon: "fa-terminal", value: "3 Star", label: "CodeChef · Competitive Programming", link: "https://www.codechef.com/users/abhay_rai2000" },
 ];
 
-const Achievements = () => {
-    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+const certifications = [
+  ["Frontend System Design", "https://drive.google.com/file/d/1IJm8HoFmPJhrE2BMklexd2nMBiLT2Zgd/view?usp=sharing"],
+  ["Node.js", "https://drive.google.com/file/d/1koPWXQecUwHYtxnc-rHMuQqwgcjHa_6Y/view?usp=sharing"],
+  ["React.js", "https://drive.google.com/file/d/1j4O0gQn1ttAFvXymHkNn49DA4RXhz4Da/view?usp=sharing"],
+];
 
-    const renderImage = (achievement: Achievement, index: number) => (
-        <motion.div
-            key={index}
-            whileHover={{ scale: 1.05 }}
-            className={`rounded-2xl shadow-xl overflow-hidden cursor-pointer group transition-all ring-4 project-card ${achievement.extraClass}`}
-            onClick={() => setSelectedImage(achievement.image)}
-        >
-            <img
-                src={achievement.image}
-                alt={achievement.imageTitle}
-                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-            />
-            <div
-                className="absolute inset-0 bg-black bg-opacity-95 flex items-center justify-center opacity-0 group-hover:opacity-100 transition"
-                onClick={() => playSound("ui/item_select")}
-            >
-                <h3 className="text-white text-xl font-semibold text-center px-4">
-                    {achievement.imageTitle}
-                </h3>
-                <i className="fas fa-expand text-white text-xl ml-2" />
-            </div>
-        </motion.div>
-    );
-
-    const renderText = (achievement: Achievement, index: number) => (
-        <div
-            className={`mt-4 md:mt-0 md:mx-12 text-center md:w-[60%] md:${
-                index % 2 != 0 ? "text-right" : "text-left"
-            }`}
-        >
-            <h3 className="text-xl font-semibold text-white">
-                {achievement.title}
-            </h3>
-            {achievement.description && (
-                <p className="text-gray-400 mt-2">{achievement.description}</p>
-            )}
-        </div>
-    );
-
-    return (
-        <section id="achievements" className="py-16 bg-gray-900/50">
-            <div className="container mx-auto px-4">
-                <div className="text-center">
-                    <h2 className="text-4xl font-bold animate-fade">
-                        <span className="gradient-text glow-text">
-                            Achievements
-                        </span>
-                    </h2>
-                    <p className="text-gray-400 animate-fade delay-100 mb-12 mt-4">
-                        Milestones That Motivate My Future
-                    </p>
-                </div>
-                <div className="flex flex-col w-full items-center justify-around gap-6 p-16">
-                    {achievements.map((achievement, index) => (
-                        <div
-                            key={index}
-                            className={`w-full flex flex-col md:${
-                                index % 2 != 0 ? "flex-row-reverse" : "flex-row"
-                            } items-center justify-start`}
-                        >
-                            {renderImage(achievement, index)}
-                            {renderText(achievement, index)}
-                        </div>
-                    ))}
-                </div>
-
-                {selectedImage && (
-                    <div
-                        className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
-                        onClick={() => {
-                            playSound("ui/item_deselect");
-                            setSelectedImage(null);
-                        }}
-                    >
-                        <img
-                            src={selectedImage}
-                            alt="Certificate"
-                            className="max-h-[90vh] max-w-[90vw] rounded-xl shadow-2xl border-4 border-white"
-                        />
-                    </div>
-                )}
-            </div>
-        </section>
-    );
-};
+const Achievements = () => (
+  <section id="achievements" className="section credentials-section">
+    <div className="container">
+      <div className="section-heading">
+        <div><p className="eyebrow">RECOGNITION</p><h2>Always learning.<br />Always leveling up.</h2></div>
+        <p>Recognition for engineering impact, competitive problem-solving, and continued investment in modern product architecture.</p>
+      </div>
+      <div className="credential-grid">
+        {credentials.map(item => {
+          const content = <><i className={`fas ${item.icon}`} /><strong>{item.value}</strong><span>{item.label}</span></>;
+          return item.link ? <a className="credential-card" href={item.link} target="_blank" rel="noreferrer" key={item.value}>{content}</a> : <div className="credential-card" key={item.value}>{content}</div>;
+        })}
+      </div>
+      <div className="certifications">
+        <span>Certified by NamasteDev</span>
+        {certifications.map(([name, link]) => <a key={name} href={link} target="_blank" rel="noreferrer">{name}<i className="fas fa-arrow-up-right-from-square" /></a>)}
+      </div>
+    </div>
+  </section>
+);
 
 export default Achievements;
